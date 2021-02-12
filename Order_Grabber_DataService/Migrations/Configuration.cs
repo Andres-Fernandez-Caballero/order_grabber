@@ -14,7 +14,7 @@
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(Models.ModelContext context)
+        protected override void Seed(ModelContext context)
         {
 
             var products = new List<Product>
@@ -25,6 +25,11 @@
                 new Product(){product_name = "Aguja_maquina", cost_price = 10, gain = 200, product_code = "m-004", estado = "a"}
             };
 
+            foreach(var product in products)
+            {
+                context.Products.Add(product);
+                context.SaveChanges();
+            }
         }
     }
 }

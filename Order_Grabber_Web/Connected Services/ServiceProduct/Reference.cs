@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Order_Grabber_Web.ServiceReference {
+namespace Order_Grabber_Web.ServiceProduct {
     using System.Runtime.Serialization;
     using System;
     
@@ -139,47 +139,47 @@ namespace Order_Grabber_Web.ServiceReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IProductControl")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceProduct.IProductControl")]
     public interface IProductControl {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IControlableOf_Product/Delete", ReplyAction="http://tempuri.org/IControlableOf_Product/DeleteResponse")]
-        void Delete(Order_Grabber_Web.ServiceReference.Product element);
+        void Delete(Order_Grabber_Web.ServiceProduct.Product element);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IControlableOf_Product/Delete", ReplyAction="http://tempuri.org/IControlableOf_Product/DeleteResponse")]
-        System.Threading.Tasks.Task DeleteAsync(Order_Grabber_Web.ServiceReference.Product element);
+        System.Threading.Tasks.Task DeleteAsync(Order_Grabber_Web.ServiceProduct.Product element);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IControlableOf_Product/Edit", ReplyAction="http://tempuri.org/IControlableOf_Product/EditResponse")]
-        void Edit(Order_Grabber_Web.ServiceReference.Product element);
+        void Edit(Order_Grabber_Web.ServiceProduct.Product element);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IControlableOf_Product/Edit", ReplyAction="http://tempuri.org/IControlableOf_Product/EditResponse")]
-        System.Threading.Tasks.Task EditAsync(Order_Grabber_Web.ServiceReference.Product element);
+        System.Threading.Tasks.Task EditAsync(Order_Grabber_Web.ServiceProduct.Product element);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IControlableOf_Product/Create", ReplyAction="http://tempuri.org/IControlableOf_Product/CreateResponse")]
-        void Create(Order_Grabber_Web.ServiceReference.Product new_element);
+        void Create(Order_Grabber_Web.ServiceProduct.Product new_element);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IControlableOf_Product/Create", ReplyAction="http://tempuri.org/IControlableOf_Product/CreateResponse")]
-        System.Threading.Tasks.Task CreateAsync(Order_Grabber_Web.ServiceReference.Product new_element);
+        System.Threading.Tasks.Task CreateAsync(Order_Grabber_Web.ServiceProduct.Product new_element);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IControlableOf_Product/GetBy", ReplyAction="http://tempuri.org/IControlableOf_Product/GetByResponse")]
-        Order_Grabber_Web.ServiceReference.Product GetBy(int id);
+        Order_Grabber_Web.ServiceProduct.Product GetBy(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IControlableOf_Product/GetBy", ReplyAction="http://tempuri.org/IControlableOf_Product/GetByResponse")]
-        System.Threading.Tasks.Task<Order_Grabber_Web.ServiceReference.Product> GetByAsync(int id);
+        System.Threading.Tasks.Task<Order_Grabber_Web.ServiceProduct.Product> GetByAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IControlableOf_Product/GetAll", ReplyAction="http://tempuri.org/IControlableOf_Product/GetAllResponse")]
-        Order_Grabber_Web.ServiceReference.Product[] GetAll();
+        Order_Grabber_Web.ServiceProduct.Product[] GetAll();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IControlableOf_Product/GetAll", ReplyAction="http://tempuri.org/IControlableOf_Product/GetAllResponse")]
-        System.Threading.Tasks.Task<Order_Grabber_Web.ServiceReference.Product[]> GetAllAsync();
+        System.Threading.Tasks.Task<Order_Grabber_Web.ServiceProduct.Product[]> GetAllAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IProductControlChannel : Order_Grabber_Web.ServiceReference.IProductControl, System.ServiceModel.IClientChannel {
+    public interface IProductControlChannel : Order_Grabber_Web.ServiceProduct.IProductControl, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ProductControlClient : System.ServiceModel.ClientBase<Order_Grabber_Web.ServiceReference.IProductControl>, Order_Grabber_Web.ServiceReference.IProductControl {
+    public partial class ProductControlClient : System.ServiceModel.ClientBase<Order_Grabber_Web.ServiceProduct.IProductControl>, Order_Grabber_Web.ServiceProduct.IProductControl {
         
         public ProductControlClient() {
         }
@@ -200,43 +200,43 @@ namespace Order_Grabber_Web.ServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public void Delete(Order_Grabber_Web.ServiceReference.Product element) {
+        public void Delete(Order_Grabber_Web.ServiceProduct.Product element) {
             base.Channel.Delete(element);
         }
         
-        public System.Threading.Tasks.Task DeleteAsync(Order_Grabber_Web.ServiceReference.Product element) {
+        public System.Threading.Tasks.Task DeleteAsync(Order_Grabber_Web.ServiceProduct.Product element) {
             return base.Channel.DeleteAsync(element);
         }
         
-        public void Edit(Order_Grabber_Web.ServiceReference.Product element) {
+        public void Edit(Order_Grabber_Web.ServiceProduct.Product element) {
             base.Channel.Edit(element);
         }
         
-        public System.Threading.Tasks.Task EditAsync(Order_Grabber_Web.ServiceReference.Product element) {
+        public System.Threading.Tasks.Task EditAsync(Order_Grabber_Web.ServiceProduct.Product element) {
             return base.Channel.EditAsync(element);
         }
         
-        public void Create(Order_Grabber_Web.ServiceReference.Product new_element) {
+        public void Create(Order_Grabber_Web.ServiceProduct.Product new_element) {
             base.Channel.Create(new_element);
         }
         
-        public System.Threading.Tasks.Task CreateAsync(Order_Grabber_Web.ServiceReference.Product new_element) {
+        public System.Threading.Tasks.Task CreateAsync(Order_Grabber_Web.ServiceProduct.Product new_element) {
             return base.Channel.CreateAsync(new_element);
         }
         
-        public Order_Grabber_Web.ServiceReference.Product GetBy(int id) {
+        public Order_Grabber_Web.ServiceProduct.Product GetBy(int id) {
             return base.Channel.GetBy(id);
         }
         
-        public System.Threading.Tasks.Task<Order_Grabber_Web.ServiceReference.Product> GetByAsync(int id) {
+        public System.Threading.Tasks.Task<Order_Grabber_Web.ServiceProduct.Product> GetByAsync(int id) {
             return base.Channel.GetByAsync(id);
         }
         
-        public Order_Grabber_Web.ServiceReference.Product[] GetAll() {
+        public Order_Grabber_Web.ServiceProduct.Product[] GetAll() {
             return base.Channel.GetAll();
         }
         
-        public System.Threading.Tasks.Task<Order_Grabber_Web.ServiceReference.Product[]> GetAllAsync() {
+        public System.Threading.Tasks.Task<Order_Grabber_Web.ServiceProduct.Product[]> GetAllAsync() {
             return base.Channel.GetAllAsync();
         }
     }

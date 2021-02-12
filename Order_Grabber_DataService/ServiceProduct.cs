@@ -9,12 +9,15 @@ using System.Text;
 
 namespace Order_Grabber_DataService
 {
-    // NOTA: puede usar el comando "Rename" del menú "Refactorizar" para cambiar el nombre de clase "Service1" en el código y en el archivo de configuración a la vez.
     public class ServiceProduct : IProductControl
     {
         public void Create(Product new_element)
         {
-            throw new NotImplementedException();
+            using (var db = new ModelContext())
+            {
+                db.Products.Add(new_element);
+                db.SaveChanges();
+            }
         }
 
         public void Delete(Product element)
@@ -29,7 +32,11 @@ namespace Order_Grabber_DataService
 
         public List<Product> GetAll()
         {
-            throw new NotImplementedException();
+            using(var db = new ModelContext())
+            {
+                var products = db.Products.ToList();
+                return products;
+            }
         }
 
         public Product GetBy(int id)

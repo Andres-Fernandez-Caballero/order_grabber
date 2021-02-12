@@ -23,7 +23,7 @@ namespace Order_Grabber_DataService.Models
         public String estado { get; set; }
         [DataMember]
         public int client_id { get; set; }
-        [ForeignKey("client_id")]
+        [ForeignKey("client_id")] 
         [DataMember]
         public Customer Customer { get; set; }
         public List<OrderDetail> details { get; set; }
