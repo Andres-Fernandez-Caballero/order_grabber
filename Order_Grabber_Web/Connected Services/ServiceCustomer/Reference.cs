@@ -23,31 +23,31 @@ namespace Order_Grabber_Web.ServiceCustomer {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string addressField;
+        private string AddressField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int client_idField;
+        private int CustomerIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string customer_nameField;
+        private string Customer_nameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string document_nroField;
+        private string Document_nroField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string document_typeField;
+        private System.Nullable<Order_Grabber_Web.ServiceCustomer.TipoDocumento> Document_typeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string emailField;
+        private string EmailField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string estadoField;
+        private System.Nullable<Order_Grabber_Web.ServiceCustomer.Estado> EstadoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Order_Grabber_Web.ServiceCustomer.Order[] ordersField;
+        private Order_Grabber_Web.ServiceCustomer.Order[] OrdersField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string phoneField;
+        private string PhoneField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -60,118 +60,118 @@ namespace Order_Grabber_Web.ServiceCustomer {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string address {
+        public string Address {
             get {
-                return this.addressField;
+                return this.AddressField;
             }
             set {
-                if ((object.ReferenceEquals(this.addressField, value) != true)) {
-                    this.addressField = value;
-                    this.RaisePropertyChanged("address");
+                if ((object.ReferenceEquals(this.AddressField, value) != true)) {
+                    this.AddressField = value;
+                    this.RaisePropertyChanged("Address");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int client_id {
+        public int CustomerID {
             get {
-                return this.client_idField;
+                return this.CustomerIDField;
             }
             set {
-                if ((this.client_idField.Equals(value) != true)) {
-                    this.client_idField = value;
-                    this.RaisePropertyChanged("client_id");
+                if ((this.CustomerIDField.Equals(value) != true)) {
+                    this.CustomerIDField = value;
+                    this.RaisePropertyChanged("CustomerID");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string customer_name {
+        public string Customer_name {
             get {
-                return this.customer_nameField;
+                return this.Customer_nameField;
             }
             set {
-                if ((object.ReferenceEquals(this.customer_nameField, value) != true)) {
-                    this.customer_nameField = value;
-                    this.RaisePropertyChanged("customer_name");
+                if ((object.ReferenceEquals(this.Customer_nameField, value) != true)) {
+                    this.Customer_nameField = value;
+                    this.RaisePropertyChanged("Customer_name");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string document_nro {
+        public string Document_nro {
             get {
-                return this.document_nroField;
+                return this.Document_nroField;
             }
             set {
-                if ((object.ReferenceEquals(this.document_nroField, value) != true)) {
-                    this.document_nroField = value;
-                    this.RaisePropertyChanged("document_nro");
+                if ((object.ReferenceEquals(this.Document_nroField, value) != true)) {
+                    this.Document_nroField = value;
+                    this.RaisePropertyChanged("Document_nro");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string document_type {
+        public System.Nullable<Order_Grabber_Web.ServiceCustomer.TipoDocumento> Document_type {
             get {
-                return this.document_typeField;
+                return this.Document_typeField;
             }
             set {
-                if ((object.ReferenceEquals(this.document_typeField, value) != true)) {
-                    this.document_typeField = value;
-                    this.RaisePropertyChanged("document_type");
+                if ((this.Document_typeField.Equals(value) != true)) {
+                    this.Document_typeField = value;
+                    this.RaisePropertyChanged("Document_type");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string email {
+        public string Email {
             get {
-                return this.emailField;
+                return this.EmailField;
             }
             set {
-                if ((object.ReferenceEquals(this.emailField, value) != true)) {
-                    this.emailField = value;
-                    this.RaisePropertyChanged("email");
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string estado {
+        public System.Nullable<Order_Grabber_Web.ServiceCustomer.Estado> Estado {
             get {
-                return this.estadoField;
+                return this.EstadoField;
             }
             set {
-                if ((object.ReferenceEquals(this.estadoField, value) != true)) {
-                    this.estadoField = value;
-                    this.RaisePropertyChanged("estado");
+                if ((this.EstadoField.Equals(value) != true)) {
+                    this.EstadoField = value;
+                    this.RaisePropertyChanged("Estado");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public Order_Grabber_Web.ServiceCustomer.Order[] orders {
+        public Order_Grabber_Web.ServiceCustomer.Order[] Orders {
             get {
-                return this.ordersField;
+                return this.OrdersField;
             }
             set {
-                if ((object.ReferenceEquals(this.ordersField, value) != true)) {
-                    this.ordersField = value;
-                    this.RaisePropertyChanged("orders");
+                if ((object.ReferenceEquals(this.OrdersField, value) != true)) {
+                    this.OrdersField = value;
+                    this.RaisePropertyChanged("Orders");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string phone {
+        public string Phone {
             get {
-                return this.phoneField;
+                return this.PhoneField;
             }
             set {
-                if ((object.ReferenceEquals(this.phoneField, value) != true)) {
-                    this.phoneField = value;
-                    this.RaisePropertyChanged("phone");
+                if ((object.ReferenceEquals(this.PhoneField, value) != true)) {
+                    this.PhoneField = value;
+                    this.RaisePropertyChanged("Phone");
                 }
             }
         }
@@ -184,6 +184,34 @@ namespace Order_Grabber_Web.ServiceCustomer {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TipoDocumento", Namespace="http://schemas.datacontract.org/2004/07/Order_Grabber_DataService.Models")]
+    public enum TipoDocumento : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        DNI = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        LIBRETA_ENROLAMIENTO = 1,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Estado", Namespace="http://schemas.datacontract.org/2004/07/Order_Grabber_DataService.Models")]
+    public enum Estado : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ACTIVO = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        INACTIVO = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PENDIENTE = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        SIN_STOCK = 3,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -199,16 +227,16 @@ namespace Order_Grabber_Web.ServiceCustomer {
         private Order_Grabber_Web.ServiceCustomer.Customer CustomerField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int client_idField;
+        private int CustomerIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string estadoField;
+        private Order_Grabber_Web.ServiceCustomer.Estado EstadoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime order_dateField;
+        private int OrderIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int order_idField;
+        private System.DateTime Order_dateField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -234,53 +262,53 @@ namespace Order_Grabber_Web.ServiceCustomer {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int client_id {
+        public int CustomerID {
             get {
-                return this.client_idField;
+                return this.CustomerIDField;
             }
             set {
-                if ((this.client_idField.Equals(value) != true)) {
-                    this.client_idField = value;
-                    this.RaisePropertyChanged("client_id");
+                if ((this.CustomerIDField.Equals(value) != true)) {
+                    this.CustomerIDField = value;
+                    this.RaisePropertyChanged("CustomerID");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string estado {
+        public Order_Grabber_Web.ServiceCustomer.Estado Estado {
             get {
-                return this.estadoField;
+                return this.EstadoField;
             }
             set {
-                if ((object.ReferenceEquals(this.estadoField, value) != true)) {
-                    this.estadoField = value;
-                    this.RaisePropertyChanged("estado");
+                if ((this.EstadoField.Equals(value) != true)) {
+                    this.EstadoField = value;
+                    this.RaisePropertyChanged("Estado");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime order_date {
+        public int OrderID {
             get {
-                return this.order_dateField;
+                return this.OrderIDField;
             }
             set {
-                if ((this.order_dateField.Equals(value) != true)) {
-                    this.order_dateField = value;
-                    this.RaisePropertyChanged("order_date");
+                if ((this.OrderIDField.Equals(value) != true)) {
+                    this.OrderIDField = value;
+                    this.RaisePropertyChanged("OrderID");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int order_id {
+        public System.DateTime Order_date {
             get {
-                return this.order_idField;
+                return this.Order_dateField;
             }
             set {
-                if ((this.order_idField.Equals(value) != true)) {
-                    this.order_idField = value;
-                    this.RaisePropertyChanged("order_id");
+                if ((this.Order_dateField.Equals(value) != true)) {
+                    this.Order_dateField = value;
+                    this.RaisePropertyChanged("Order_date");
                 }
             }
         }
@@ -328,18 +356,6 @@ namespace Order_Grabber_Web.ServiceCustomer {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IControlableOf_Customer/GetAll", ReplyAction="http://tempuri.org/IControlableOf_Customer/GetAllResponse")]
         System.Threading.Tasks.Task<Order_Grabber_Web.ServiceCustomer.Customer[]> GetAllAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerControl/GetAllOrders", ReplyAction="http://tempuri.org/ICustomerControl/GetAllOrdersResponse")]
-        Order_Grabber_Web.ServiceCustomer.Order[] GetAllOrders();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerControl/GetAllOrders", ReplyAction="http://tempuri.org/ICustomerControl/GetAllOrdersResponse")]
-        System.Threading.Tasks.Task<Order_Grabber_Web.ServiceCustomer.Order[]> GetAllOrdersAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerControl/GetOrderBy", ReplyAction="http://tempuri.org/ICustomerControl/GetOrderByResponse")]
-        Order_Grabber_Web.ServiceCustomer.Order GetOrderBy(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerControl/GetOrderBy", ReplyAction="http://tempuri.org/ICustomerControl/GetOrderByResponse")]
-        System.Threading.Tasks.Task<Order_Grabber_Web.ServiceCustomer.Order> GetOrderByAsync(int id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -408,21 +424,10 @@ namespace Order_Grabber_Web.ServiceCustomer {
         public System.Threading.Tasks.Task<Order_Grabber_Web.ServiceCustomer.Customer[]> GetAllAsync() {
             return base.Channel.GetAllAsync();
         }
-        
-        public Order_Grabber_Web.ServiceCustomer.Order[] GetAllOrders() {
-            return base.Channel.GetAllOrders();
-        }
-        
-        public System.Threading.Tasks.Task<Order_Grabber_Web.ServiceCustomer.Order[]> GetAllOrdersAsync() {
-            return base.Channel.GetAllOrdersAsync();
-        }
-        
-        public Order_Grabber_Web.ServiceCustomer.Order GetOrderBy(int id) {
-            return base.Channel.GetOrderBy(id);
-        }
-        
-        public System.Threading.Tasks.Task<Order_Grabber_Web.ServiceCustomer.Order> GetOrderByAsync(int id) {
-            return base.Channel.GetOrderByAsync(id);
+
+        internal object GetAllOrders()
+        {
+            throw new NotImplementedException();
         }
     }
 }

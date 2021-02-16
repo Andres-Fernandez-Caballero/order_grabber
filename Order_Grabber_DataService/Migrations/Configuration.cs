@@ -1,5 +1,6 @@
 ﻿namespace Order_Grabber_DataService.Migrations
 {
+    using Order_Grabber_DataService.Database;
     using Order_Grabber_DataService.Models;
     using System;
     using System.Collections.Generic;
@@ -12,24 +13,23 @@
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            ContextKey = "Order_Grabber_DataService.Database.ModelContext";
         }
 
         protected override void Seed(ModelContext context)
         {
+            var products = InicializadorBaseDatos.GetProducts();
+            products.ForEach(product => context.Products.Add(product));
+            context.SaveChanges();
 
-            var products = new List<Product>
-            {
-                new Product(){product_name = "hilo", cost_price = 100, gain = 100, product_code = "m-001", estado = "a"},
-                new Product(){product_name = "Rollo cinta", cost_price = 25, gain = 200, product_code = "m-002", estado = "a"},
-                new Product(){product_name = "elastico", cost_price = 50, gain = 50, product_code = "m-003", estado = "a"},
-                new Product(){product_name = "Aguja_maquina", cost_price = 10, gain = 200, product_code = "m-004", estado = "a"}
-            };
+            var customers = InicializadorBaseDatos.GetCustomers();
+            customers.ForEach(customer => context.Customers.Add(customer));
+            context.SaveChanges();
 
-            foreach(var product in products)
-            {
-                context.Products.Add(product);
-                context.SaveChanges();
-            }
+            var orders = InicializadorBaseDatos.GetOrders();
+            orders.ForEach(order => context.Orders.Add(order));
+            context.SaveChanges();
         }
+            
     }
 }

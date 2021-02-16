@@ -55,13 +55,15 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database\InicializadorBaseDatos.cs" />
+    <Compile Include="Database\ModelContext.cs" />
     <Compile Include="Interfaz\IControlable.cs" />
     <Compile Include="Interfaz\ICustomerControl.cs" />
     <Compile Include="Interfaz\IOrderControl.cs" />
     <Compile Include="Interfaz\IProductControl.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
-    <Compile Include="Models\ModelContext.cs" />
+    <Compile Include="Models\Estado.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -75,6 +77,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Db_Order_Grabber.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Db_Order_Grabber_log.ldf">
+      <DependentUpon>Db_Order_Grabber.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

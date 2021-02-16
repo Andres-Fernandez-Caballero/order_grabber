@@ -15,7 +15,7 @@ namespace Order_Grabber_Web.Controllers
         // GET: Customer
         public ActionResult Index()
         {
-            using(var service = new ServiceCustomer.CustomerControlClient())
+            using(var service = new CustomerControlClient())
             {
                 var customers = service.GetAll();
                 return View(customers);

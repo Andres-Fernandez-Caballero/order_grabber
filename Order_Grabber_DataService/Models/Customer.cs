@@ -11,32 +11,51 @@ namespace Order_Grabber_DataService.Models
     [DataContract]
     public class Customer
     {
-        [Key]
+        // Clave Primaria
         [DataMember]
-        public int client_id { get; set; }
-        [StringLength(10)]
+        public int CustomerID { get; set; }
+
+        // tipo de documento 
         [DataMember]
-        public String document_type { get; set; }
-        [StringLength(20)]
+        public TipoDocumento? Document_type { get; set; }
+
+        // Numero de documento
+        [StringLength(20), Required]
         [DataMember]
-        public String document_nro { get; set; }
-        [StringLength(255)]
+        public string Document_nro { get; set; }
+        
+        // Nombre completo del cliente
+        [StringLength(255), Required]
         [DataMember]
-        public String customer_name { get; set; }
-        [StringLength(255)]
+        public string Customer_name { get; set; }
+
+        // Direccion Fiscal del cliente
+        [StringLength(255), Required]
         [DataMember]
-        public String address { get; set; }
+        public string Address { get; set; }
+
+        // Telefono de contacto del cliente
         [StringLength(100)]
         [DataMember]
-        public String phone { get; set; }
-        [StringLength(255)]
-        [DataMember]
-        public String email { get; set; }
-        [StringLength(10)]
-        [DataMember]
-        public String estado { get; set; }
-        [DataMember]
-        public List<Order> orders { get; set; }
+        public string Phone { get; set; }
 
+        // Email del cliente
+        [StringLength(255),Required]
+        [DataMember]
+        public string Email { get; set; }
+
+        // Estado del cliente respecto a la empresa
+        [DataMember]
+        public Estado? Estado { get; set; }
+        
+        // Ordenes
+        [DataMember]
+        public virtual ICollection<Order> Orders { get; set; }
+
+    }
+
+    public enum TipoDocumento
+    {
+        DNI, LIBRETA_ENROLAMIENTO
     }
 }

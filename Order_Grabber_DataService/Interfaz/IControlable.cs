@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Order_Grabber_DataService.Interfaz
 {
+    /***    Esta es una interfaz generica para el control de los datos,
+     *      me parecio una forma de ahorrar codigo o por lo menos escribir menos...
+     ***/
 
     [ServiceContract]
     public interface IControlable<T>

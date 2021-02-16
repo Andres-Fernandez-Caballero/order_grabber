@@ -11,10 +11,12 @@ namespace Order_Grabber_DataService.Interfaz
     [ServiceContract] // si hereda de un service contract deberia ser un service contract pero tira error si no lo pongo...
     public interface ICustomerControl: IControlable<Customer>
     {
+        /*
         [OperationContract]
         List<Order> GetAllOrders();
         [OperationContract]
         Order GetOrderBy(int id);
+        */
 
     }
 }

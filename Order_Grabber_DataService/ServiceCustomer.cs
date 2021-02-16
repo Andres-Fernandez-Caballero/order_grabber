@@ -1,5 +1,4 @@
 ﻿using Order_Grabber_DataService.Interfaz;
-using Order_Grabber_DataService.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +6,8 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using System.Data.Entity;
+using Order_Grabber_DataService.Models;
+using Order_Grabber_DataService.Database;
 
 namespace Order_Grabber_DataService
 {
@@ -14,11 +15,7 @@ namespace Order_Grabber_DataService
     {
         public void Create(Customer new_element)
         {
-            using(var db = new ModelContext())
-            {
-                db.Customers.Add(new_element);
-                db.SaveChanges();
-            }
+            throw new NotImplementedException();
         }
 
         public void Delete(Customer element)
@@ -33,29 +30,10 @@ namespace Order_Grabber_DataService
 
         public List<Customer> GetAll()
         {
-            using(var db = new ModelContext())
+            using(var db = new ModelContext() )
             {
-                var customers = db.Customers.ToList();
-                return customers;
-            }
-        }
-        
-        public List<Order> GetAllOrders()
-        {
-            using (var db = new ModelContext())
-            {
-                
-
-                return null;
-            }
-        }
-       
-        public Order GetOrderBy(int id)
-        {
-            using(var db = new ModelContext())
-            {
-                var order = db.Orders.Find(id);
-                return order;
+                var Customers = db.Customers.ToList();
+                return Customers;
             }
         }
 

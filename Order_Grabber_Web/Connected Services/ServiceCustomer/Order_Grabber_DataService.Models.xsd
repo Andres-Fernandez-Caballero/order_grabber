@@ -2,18 +2,34 @@
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Order_Grabber_DataService.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Order_Grabber_DataService.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:complexType name="Customer">
     <xs:sequence>
-      <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="client_id" type="xs:int" />
-      <xs:element minOccurs="0" name="customer_name" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="document_nro" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="document_type" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="estado" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="orders" nillable="true" type="tns:ArrayOfOrder" />
-      <xs:element minOccurs="0" name="phone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerID" type="xs:int" />
+      <xs:element minOccurs="0" name="Customer_name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Document_nro" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Document_type" nillable="true" type="tns:TipoDocumento" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="tns:Estado" />
+      <xs:element minOccurs="0" name="Orders" nillable="true" type="tns:ArrayOfOrder" />
+      <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Customer" nillable="true" type="tns:Customer" />
+  <xs:simpleType name="TipoDocumento">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DNI" />
+      <xs:enumeration value="LIBRETA_ENROLAMIENTO" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TipoDocumento" nillable="true" type="tns:TipoDocumento" />
+  <xs:simpleType name="Estado">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ACTIVO" />
+      <xs:enumeration value="INACTIVO" />
+      <xs:enumeration value="PENDIENTE" />
+      <xs:enumeration value="SIN_STOCK" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Estado" nillable="true" type="tns:Estado" />
   <xs:complexType name="ArrayOfOrder">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Order" nillable="true" type="tns:Order" />
@@ -23,10 +39,10 @@
   <xs:complexType name="Order">
     <xs:sequence>
       <xs:element minOccurs="0" name="Customer" nillable="true" type="tns:Customer" />
-      <xs:element minOccurs="0" name="client_id" type="xs:int" />
-      <xs:element minOccurs="0" name="estado" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="order_date" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="order_id" type="xs:int" />
+      <xs:element minOccurs="0" name="CustomerID" type="xs:int" />
+      <xs:element minOccurs="0" name="Estado" type="tns:Estado" />
+      <xs:element minOccurs="0" name="OrderID" type="xs:int" />
+      <xs:element minOccurs="0" name="Order_date" type="xs:dateTime" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Order" nillable="true" type="tns:Order" />

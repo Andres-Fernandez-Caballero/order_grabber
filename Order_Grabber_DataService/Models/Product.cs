@@ -12,21 +12,30 @@ namespace Order_Grabber_DataService.Models
     [DataContract]
     public class Product
     {
-        [Key]
+        // Clave Primaria
         [DataMember]
-        public int product_id { get; set; }
-        [StringLength(50)]
+        public int ProductID { get; set; }
+        
+        // Codigo del producto para reconocimiento interno
+        [StringLength(50), Required]
         [DataMember]
-        public String product_code { get; set; }
-        [StringLength(100)]
+        public string Product_code { get; set; }
+        
+        // Nombre del producto
+        [StringLength(100), Required]
         [DataMember]
-        public String product_name { get; set; }
+        public string Product_name { get; set; }
+        
+        // valor de compra del producto
         [DataMember]
-        public double cost_price { get; set; }
+        public double Cost_price { get; set; }
+        
+        // porcentaje de ganancia sobre el costo del producto
         [DataMember]
-        public double gain { get; set; }
-        [StringLength(50)]
+        public double Gain { get; set; }
+        
+        // Estado del producto en referencia a la disponibilidad
         [DataMember]
-        public String estado { get; set; }
+        public Estado Estado { get; set; }
     }
 }

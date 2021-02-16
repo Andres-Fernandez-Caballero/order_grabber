@@ -12,28 +12,33 @@ namespace Order_Grabber_DataService.Models
     [DataContract]
     public class Order
     {
-        [Key]
+        // Clave Primaria
         [DataMember]
-        public int order_id { get; set; }
-        [DataType(DataType.Date)]
+        public int OrderID { get; set; }
+        
+        // Fecha de creacion de la orden
+        //[DataType(DataType.Date)]
         [DataMember]
-        public DateTime order_date { get; set; }
-        [StringLength(10)]
+        public DateTime Order_date { get; set; }
+        
+        // Estado de la orden
         [DataMember]
-        public String estado { get; set; }
+        public Estado Estado { get; set; }
+        
+        // clave foranea
         [DataMember]
-        public int client_id { get; set; }
-        [ForeignKey("client_id")] 
+        public int CustomerID { get; set; }
+
+        // Referencia al cliente
         [DataMember]
-        public Customer Customer { get; set; }
-        public List<OrderDetail> details { get; set; }
+        public virtual Customer Customer { get; set; }
+        //public virtual ICollection<OrderDetail> details { get; set; }
     }
 
     public class OrderDetail
     {
-        [Key]
         [DataMember]
-        public int line_id { get; set; }
+        public int OrderDetailID { get; set; }
         [DataMember]
         public int order_id { get; set; }
         [ForeignKey("order_id")]
