@@ -40,10 +40,10 @@ namespace Data_Service.Database
         {
             ToTable("Orders");
 
-            /*
+            
             HasKey(x => x.OrderID);
             Property(x => x.OrderID).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
-            */
+            
             HasRequired(x => x.Customer).WithMany(x => x.Orders).HasForeignKey(x => x.CustomerID);
             
         }
@@ -53,7 +53,9 @@ namespace Data_Service.Database
     {
         public CustomerMap()
         {
-
+            ToTable("Customers");
+            HasKey(x => x.CustomerID);
+            Property(x => x.CustomerID).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
         }
     }
 }

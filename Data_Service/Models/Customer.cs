@@ -46,7 +46,7 @@ namespace Data_Service.Models
 
         // Ordenes
         [DataMember]
-        public virtual ICollection<Order> Orders { get; set; }
+        public ICollection<Order> Orders { get; set; }
 
     }
 

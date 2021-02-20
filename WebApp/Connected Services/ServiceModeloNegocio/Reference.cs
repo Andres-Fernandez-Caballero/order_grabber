@@ -224,9 +224,6 @@ namespace WebApp.ServiceModeloNegocio {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WebApp.ServiceModeloNegocio.Customer CustomerField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int CustomerIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -245,19 +242,6 @@ namespace WebApp.ServiceModeloNegocio {
             }
             set {
                 this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WebApp.ServiceModeloNegocio.Customer Customer {
-            get {
-                return this.CustomerField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CustomerField, value) != true)) {
-                    this.CustomerField = value;
-                    this.RaisePropertyChanged("Customer");
-                }
             }
         }
         

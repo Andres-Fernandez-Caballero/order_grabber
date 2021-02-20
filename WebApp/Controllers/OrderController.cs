@@ -1,4 +1,6 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.Web.Mvc;
+using WebApp.ServiceModeloNegocio;
 
 namespace WebApp.Controllers
 {

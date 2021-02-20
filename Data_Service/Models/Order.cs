@@ -9,6 +9,13 @@ namespace Data_Service.Models
     [DataContract]
     public class Order
     {
+
+        public Order()
+        {
+            //Customer = new Customer();
+        }
+
+
         // Clave Primaria
         [DataMember]
         public int OrderID { get; set; }
@@ -30,13 +37,10 @@ namespace Data_Service.Models
         [ForeignKey(nameof(CustomerID))]
         public virtual Customer Customer { get; set; }
         //public virtual ICollection<OrderDetail> details { get; set; }
-
+        [OperationContract]
         public Customer GetCustomer()
         {
-            using(var context = new ContextGrabber())
-            {
-                return context.Customers.Find(this.CustomerID);
-            }
+            return this.Customer;
         }
     }
 

@@ -110,9 +110,8 @@ namespace Data_Service
         {
             using (var context = new ContextGrabber())
             {
-                
-                var orders = context.Orders.ToList();
                 var customer = context.Customers.ToList();
+                var orders = context.Orders.ToList();
                 return orders;
             }
         }

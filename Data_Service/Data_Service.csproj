@@ -69,10 +69,6 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\Db_Order_Grabber.mdf" />
-    <Content Include="App_Data\Db_Order_Grabber_log.ldf">
-      <DependentUpon>Db_Order_Grabber.mdf</DependentUpon>
-    </Content>
     <Content Include="ServiceModeloNegocio.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -93,7 +89,9 @@
     <Compile Include="Intefaz\IService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="Web.Debug.config">

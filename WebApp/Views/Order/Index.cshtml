@@ -23,7 +23,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.Order_date)
         </td>
-        <td>@Html.DisplayFor(modelItem => item.Customer.Customer_name)</td>
+        <td>@Html.DisplayFor(modelItem => item.ToString())</td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.OrderID }) |
             @Html.ActionLink("Details", "Details", new { id=item.OrderID }) |
