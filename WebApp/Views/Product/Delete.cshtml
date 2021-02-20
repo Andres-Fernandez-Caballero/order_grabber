@@ -1,0 +1,51 @@
+﻿@model WebApp.ServiceModeloNegocio.Product
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        
+        <dt>
+            @Html.DisplayNameFor(model => model.Cost_price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cost_price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gain)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gain)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Product_code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product_code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Product_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product_name)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

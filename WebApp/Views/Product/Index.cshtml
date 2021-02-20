@@ -1,0 +1,48 @@
+﻿@model IEnumerable<WebApp.ServiceModeloNegocio.Product>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Cost_price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gain)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product_code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product_name)
+        </th>
+        <th>Estado</th>
+        <th>Opciones</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cost_price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gain)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product_code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product_name)
+        </td>
+        <td>@Html.DisplayFor(modelItem => item.Estado)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ProductID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ProductID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ProductID })
+        </td>
+    </tr>
+}
+
+</table>

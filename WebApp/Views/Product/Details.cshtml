@@ -1,0 +1,44 @@
+﻿@model WebApp.ServiceModeloNegocio.Product
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cost_price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cost_price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gain)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gain)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Product_code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product_code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Product_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ProductID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
