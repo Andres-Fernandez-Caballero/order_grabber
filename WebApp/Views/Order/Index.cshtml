@@ -1,35 +1,31 @@
-﻿@model IEnumerable<WebApp.ServiceModeloNegocio.Order>
+﻿@model ICollection<WebApp.ServiceModeloNegocio.Order>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.CustomerID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Order_date)
-        </th>
+        <th>Fecha del pedido</th>
+        <th>id cliente</th>
         <th>Cliente</th>
-        <th></th>
+        <th>Estado</th>
+        <th>Opciones</th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.CustomerID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Order_date)
-        </td>
-        <td>@Html.DisplayFor(modelItem => item.ToString())</td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.OrderID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.OrderID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.OrderID })
-        </td>
-    </tr>
+@foreach (var order in Model) {
+<tr>
+    <td>@Html.DisplayFor(modelItem => order.Order_date)</td>
+    <td>@Html.DisplayFor(modelItem => order.CustomerID)</td>
+    <td>@Html.DisplayFor(modelItem => order.Customer.Customer_name)</td>
+    <td>@Html.DisplayFor(modelItem => order.Estado)</td>
+    
+        <!--Opciones-->
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = order.OrderID }) |
+        @Html.ActionLink("Details", "Details", new { id = order.OrderID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = order.OrderID })
+    </td>
+</tr>
 }
 
 </table>

@@ -11,6 +11,9 @@ namespace Data_Service.Intefaz
         List<Product> GetAllProducts();
 
         [OperationContract]
+        List<Product> GetAllProductsDisponibles();
+
+        [OperationContract]
         Product GetProductById(int id);
 
         [OperationContract]

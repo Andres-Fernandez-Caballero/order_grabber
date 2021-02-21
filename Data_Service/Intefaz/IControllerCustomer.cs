@@ -11,6 +11,9 @@ namespace Data_Service.Intefaz
         List<Customer> GetAllCustomers();
 
         [OperationContract]
+        List<Customer> GetListCustomersByEstado(Estado estado);
+
+        [OperationContract]
         Customer GetCustomerById(int id);
 
         [OperationContract]

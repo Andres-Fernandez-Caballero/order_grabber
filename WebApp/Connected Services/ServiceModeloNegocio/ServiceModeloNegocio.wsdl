@@ -13,6 +13,12 @@
   <wsdl:message name="IService_GetAllCustomers_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllCustomersResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_GetListCustomersByEstado_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListCustomersByEstado" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetListCustomersByEstado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListCustomersByEstadoResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_GetCustomerById_InputMessage">
     <wsdl:part name="parameters" element="tns:GetCustomerById" />
   </wsdl:message>
@@ -42,6 +48,12 @@
   </wsdl:message>
   <wsdl:message name="IService_GetAllProducts_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetAllProductsDisponibles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllProductsDisponibles" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetAllProductsDisponibles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllProductsDisponiblesResponse" />
   </wsdl:message>
   <wsdl:message name="IService_GetProductById_InputMessage">
     <wsdl:part name="parameters" element="tns:GetProductById" />
@@ -102,6 +114,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IControllerCustomer/GetAllCustomers" message="tns:IService_GetAllCustomers_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IControllerCustomer/GetAllCustomersResponse" message="tns:IService_GetAllCustomers_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetListCustomersByEstado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IControllerCustomer/GetListCustomersByEstado" message="tns:IService_GetListCustomersByEstado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IControllerCustomer/GetListCustomersByEstadoResponse" message="tns:IService_GetListCustomersByEstado_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetCustomerById">
       <wsdl:input wsaw:Action="http://tempuri.org/IControllerCustomer/GetCustomerById" message="tns:IService_GetCustomerById_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IControllerCustomer/GetCustomerByIdResponse" message="tns:IService_GetCustomerById_OutputMessage" />
@@ -121,6 +137,10 @@
     <wsdl:operation name="GetAllProducts">
       <wsdl:input wsaw:Action="http://tempuri.org/IControllerProduct/GetAllProducts" message="tns:IService_GetAllProducts_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IControllerProduct/GetAllProductsResponse" message="tns:IService_GetAllProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProductsDisponibles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IControllerProduct/GetAllProductsDisponibles" message="tns:IService_GetAllProductsDisponibles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IControllerProduct/GetAllProductsDisponiblesResponse" message="tns:IService_GetAllProductsDisponibles_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetProductById">
       <wsdl:input wsaw:Action="http://tempuri.org/IControllerProduct/GetProductById" message="tns:IService_GetProductById_InputMessage" />
@@ -170,6 +190,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetListCustomersByEstado">
+      <soap:operation soapAction="http://tempuri.org/IControllerCustomer/GetListCustomersByEstado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetCustomerById">
       <soap:operation soapAction="http://tempuri.org/IControllerCustomer/GetCustomerById" style="document" />
       <wsdl:input>
@@ -208,6 +237,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetAllProducts">
       <soap:operation soapAction="http://tempuri.org/IControllerProduct/GetAllProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProductsDisponibles">
+      <soap:operation soapAction="http://tempuri.org/IControllerProduct/GetAllProductsDisponibles" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

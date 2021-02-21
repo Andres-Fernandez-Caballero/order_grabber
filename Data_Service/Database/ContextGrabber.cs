@@ -10,7 +10,7 @@ namespace Data_Service.Database
         public ContextGrabber()
             : base("name=ContextGrabber")
         {
-            this.Configuration.LazyLoadingEnabled = false;
+            this.Configuration.LazyLoadingEnabled = true;
             this.Configuration.ProxyCreationEnabled = false;
         }
 

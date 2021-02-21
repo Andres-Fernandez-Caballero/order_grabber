@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Web.Mvc;
 using WebApp.ServiceModeloNegocio;
 
@@ -20,24 +21,39 @@ namespace WebApp.Controllers
         // GET: Order/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            using(var service = new ServiceModeloNegocio.ServiceClient())
+            {
+                var order = service.GetOrderById(id);
+                return View(order);
+            }
         }
 
         // GET: Order/Create
         public ActionResult Create()
         {
-            return View();
+            using(var service = new ServiceModeloNegocio.ServiceClient())
+            {
+                ViewBag.ProductosDisponibles = service.GetAllProductsDisponibles();
+                ViewBag.CustomersList = service.GetListCustomersByEstado(Estado.INACTIVO);
+                return View();
+            }
+            
         }
 
         // POST: Order/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Order order)
         {
             try
             {
-                // TODO: Add insert logic here
+                using(var service = new ServiceModeloNegocio.ServiceClient())
+                {
+                    order.Order_date = DateTime.Now;
+                    service.CreateOrder(order);
+                    return RedirectToAction("Index");
+                }
 
-                return RedirectToAction("Index");
+                
             }
             catch
             {
@@ -48,18 +64,26 @@ namespace WebApp.Controllers
         // GET: Order/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            using (var service = new ServiceModeloNegocio.ServiceClient())
+            {
+                ViewBag.ProductosDisponibles = service.GetAllProductsDisponibles();
+                ViewBag.CustomersList = service.GetListCustomersByEstado(Estado.INACTIVO);
+                return View();
+            }
         }
 
         // POST: Order/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(Order order)
         {
             try
             {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
+                using(var service = new ServiceModeloNegocio.ServiceClient())
+                {
+                    service.EditOrder(order); 
+                    return RedirectToAction("Index");
+                }
+                
             }
             catch
             {
@@ -70,7 +94,12 @@ namespace WebApp.Controllers
         // GET: Order/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            using(var service = new ServiceModeloNegocio.ServiceClient())
+            {
+                var order = service.GetOrderById(id);
+                return View(order);
+            }
+            
         }
 
         // POST: Order/Delete/5
@@ -79,13 +108,17 @@ namespace WebApp.Controllers
         {
             try
             {
-                // TODO: Add delete logic here
+               using(var service = new ServiceModeloNegocio.ServiceClient())
+                {
+                    var order = service.GetOrderById(id);
+                    service.DeleteOrder(order);
+                }
 
                 return RedirectToAction("Index");
             }
             catch
             {
-                return View();
+                return View("Index");
             }
         }
     }

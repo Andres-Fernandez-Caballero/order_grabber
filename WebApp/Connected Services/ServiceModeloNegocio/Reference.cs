@@ -44,9 +44,6 @@ namespace WebApp.ServiceModeloNegocio {
         private System.Nullable<WebApp.ServiceModeloNegocio.Estado> EstadoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WebApp.ServiceModeloNegocio.Order[] OrdersField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PhoneField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -151,19 +148,6 @@ namespace WebApp.ServiceModeloNegocio {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public WebApp.ServiceModeloNegocio.Order[] Orders {
-            get {
-                return this.OrdersField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OrdersField, value) != true)) {
-                    this.OrdersField = value;
-                    this.RaisePropertyChanged("Orders");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public string Phone {
             get {
                 return this.PhoneField;
@@ -212,99 +196,6 @@ namespace WebApp.ServiceModeloNegocio {
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         SIN_STOCK = 3,
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Order", Namespace="http://schemas.datacontract.org/2004/07/Data_Service.Models")]
-    [System.SerializableAttribute()]
-    public partial class Order : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int CustomerIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WebApp.ServiceModeloNegocio.Estado EstadoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int OrderIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime Order_dateField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int CustomerID {
-            get {
-                return this.CustomerIDField;
-            }
-            set {
-                if ((this.CustomerIDField.Equals(value) != true)) {
-                    this.CustomerIDField = value;
-                    this.RaisePropertyChanged("CustomerID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WebApp.ServiceModeloNegocio.Estado Estado {
-            get {
-                return this.EstadoField;
-            }
-            set {
-                if ((this.EstadoField.Equals(value) != true)) {
-                    this.EstadoField = value;
-                    this.RaisePropertyChanged("Estado");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int OrderID {
-            get {
-                return this.OrderIDField;
-            }
-            set {
-                if ((this.OrderIDField.Equals(value) != true)) {
-                    this.OrderIDField = value;
-                    this.RaisePropertyChanged("OrderID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime Order_date {
-            get {
-                return this.Order_dateField;
-            }
-            set {
-                if ((this.Order_dateField.Equals(value) != true)) {
-                    this.Order_dateField = value;
-                    this.RaisePropertyChanged("Order_date");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -432,6 +323,115 @@ namespace WebApp.ServiceModeloNegocio {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Order", Namespace="http://schemas.datacontract.org/2004/07/Data_Service.Models", IsReference=true)]
+    [System.SerializableAttribute()]
+    public partial class Order : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WebApp.ServiceModeloNegocio.Customer CustomerField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CustomerIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WebApp.ServiceModeloNegocio.Estado EstadoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int OrderIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime Order_dateField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WebApp.ServiceModeloNegocio.Customer Customer {
+            get {
+                return this.CustomerField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustomerField, value) != true)) {
+                    this.CustomerField = value;
+                    this.RaisePropertyChanged("Customer");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CustomerID {
+            get {
+                return this.CustomerIDField;
+            }
+            set {
+                if ((this.CustomerIDField.Equals(value) != true)) {
+                    this.CustomerIDField = value;
+                    this.RaisePropertyChanged("CustomerID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WebApp.ServiceModeloNegocio.Estado Estado {
+            get {
+                return this.EstadoField;
+            }
+            set {
+                if ((this.EstadoField.Equals(value) != true)) {
+                    this.EstadoField = value;
+                    this.RaisePropertyChanged("Estado");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int OrderID {
+            get {
+                return this.OrderIDField;
+            }
+            set {
+                if ((this.OrderIDField.Equals(value) != true)) {
+                    this.OrderIDField = value;
+                    this.RaisePropertyChanged("OrderID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Order_date {
+            get {
+                return this.Order_dateField;
+            }
+            set {
+                if ((this.Order_dateField.Equals(value) != true)) {
+                    this.Order_dateField = value;
+                    this.RaisePropertyChanged("Order_date");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceModeloNegocio.IService")]
     public interface IService {
@@ -441,6 +441,12 @@ namespace WebApp.ServiceModeloNegocio {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IControllerCustomer/GetAllCustomers", ReplyAction="http://tempuri.org/IControllerCustomer/GetAllCustomersResponse")]
         System.Threading.Tasks.Task<WebApp.ServiceModeloNegocio.Customer[]> GetAllCustomersAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IControllerCustomer/GetListCustomersByEstado", ReplyAction="http://tempuri.org/IControllerCustomer/GetListCustomersByEstadoResponse")]
+        WebApp.ServiceModeloNegocio.Customer[] GetListCustomersByEstado(WebApp.ServiceModeloNegocio.Estado estado);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IControllerCustomer/GetListCustomersByEstado", ReplyAction="http://tempuri.org/IControllerCustomer/GetListCustomersByEstadoResponse")]
+        System.Threading.Tasks.Task<WebApp.ServiceModeloNegocio.Customer[]> GetListCustomersByEstadoAsync(WebApp.ServiceModeloNegocio.Estado estado);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IControllerCustomer/GetCustomerById", ReplyAction="http://tempuri.org/IControllerCustomer/GetCustomerByIdResponse")]
         WebApp.ServiceModeloNegocio.Customer GetCustomerById(int id);
@@ -471,6 +477,12 @@ namespace WebApp.ServiceModeloNegocio {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IControllerProduct/GetAllProducts", ReplyAction="http://tempuri.org/IControllerProduct/GetAllProductsResponse")]
         System.Threading.Tasks.Task<WebApp.ServiceModeloNegocio.Product[]> GetAllProductsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IControllerProduct/GetAllProductsDisponibles", ReplyAction="http://tempuri.org/IControllerProduct/GetAllProductsDisponiblesResponse")]
+        WebApp.ServiceModeloNegocio.Product[] GetAllProductsDisponibles();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IControllerProduct/GetAllProductsDisponibles", ReplyAction="http://tempuri.org/IControllerProduct/GetAllProductsDisponiblesResponse")]
+        System.Threading.Tasks.Task<WebApp.ServiceModeloNegocio.Product[]> GetAllProductsDisponiblesAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IControllerProduct/GetProductById", ReplyAction="http://tempuri.org/IControllerProduct/GetProductByIdResponse")]
         WebApp.ServiceModeloNegocio.Product GetProductById(int id);
@@ -562,6 +574,14 @@ namespace WebApp.ServiceModeloNegocio {
             return base.Channel.GetAllCustomersAsync();
         }
         
+        public WebApp.ServiceModeloNegocio.Customer[] GetListCustomersByEstado(WebApp.ServiceModeloNegocio.Estado estado) {
+            return base.Channel.GetListCustomersByEstado(estado);
+        }
+        
+        public System.Threading.Tasks.Task<WebApp.ServiceModeloNegocio.Customer[]> GetListCustomersByEstadoAsync(WebApp.ServiceModeloNegocio.Estado estado) {
+            return base.Channel.GetListCustomersByEstadoAsync(estado);
+        }
+        
         public WebApp.ServiceModeloNegocio.Customer GetCustomerById(int id) {
             return base.Channel.GetCustomerById(id);
         }
@@ -600,6 +620,14 @@ namespace WebApp.ServiceModeloNegocio {
         
         public System.Threading.Tasks.Task<WebApp.ServiceModeloNegocio.Product[]> GetAllProductsAsync() {
             return base.Channel.GetAllProductsAsync();
+        }
+        
+        public WebApp.ServiceModeloNegocio.Product[] GetAllProductsDisponibles() {
+            return base.Channel.GetAllProductsDisponibles();
+        }
+        
+        public System.Threading.Tasks.Task<WebApp.ServiceModeloNegocio.Product[]> GetAllProductsDisponiblesAsync() {
+            return base.Channel.GetAllProductsDisponiblesAsync();
         }
         
         public WebApp.ServiceModeloNegocio.Product GetProductById(int id) {

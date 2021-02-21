@@ -106,6 +106,15 @@ namespace Data_Service
             }
         }
 
+        public List<Customer> GetListCustomersByEstado(Estado estado)
+        {
+            using(var context = new ContextGrabber())
+            {
+                var customers = context.Customers.Where(c => c.Estado == estado);
+                return customers.ToList();
+            }
+        }
+
         public List<Order> GetAllOrders()
         {
             using (var context = new ContextGrabber())
@@ -125,6 +134,17 @@ namespace Data_Service
             }
         }
 
+        /*** Este metodo devolvera una lista de productos con estado ACTIVO ***/
+        public List<Product> GetAllProductsDisponibles()
+        {
+            using(var context = new ContextGrabber())
+            {
+
+                var products = context.Products.Where(p => p.Estado == Estado.INACTIVO);
+                return products.ToList();
+            }
+        }
+
         public Customer GetCustomerById(int id)
         {
             using (var context = new ContextGrabber())
@@ -138,6 +158,7 @@ namespace Data_Service
         {
             using (var context = new ContextGrabber())
             {
+                var customer = context.Customers.ToList();
                 var order = context.Orders.Find(id);
                 return order;
             }

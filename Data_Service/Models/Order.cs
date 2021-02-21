@@ -6,7 +6,10 @@ using System.ServiceModel;
 
 namespace Data_Service.Models
 {
-    [DataContract]
+    [
+        Serializable, 
+        DataContractAttribute(IsReference =true)
+    ]
     public class Order
     {
 
@@ -34,10 +37,11 @@ namespace Data_Service.Models
         public int CustomerID { get; set; }
 
         // Referencia al cliente
-        [ForeignKey(nameof(CustomerID))]
-        public virtual Customer Customer { get; set; }
+        [ForeignKey(nameof(CustomerID)),DataMember]
+        public Customer Customer { get; set; }
         //public virtual ICollection<OrderDetail> details { get; set; }
         [OperationContract]
+       
         public Customer GetCustomer()
         {
             return this.Customer;
