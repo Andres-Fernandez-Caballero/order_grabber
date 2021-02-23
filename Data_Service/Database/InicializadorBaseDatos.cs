@@ -27,9 +27,19 @@ namespace Data_Service.Database
         {
             var Orders = new List<Order>
             {
-                new Order{CustomerID = 1, Estado = Estado.ACTIVO, Order_date = DateTime.Now}
+                new Order{ CustomerID = 1, Estado = Estado.ACTIVO, Order_date = DateTime.Now}
             };
             return Orders;
+        }
+
+        public static List<OrderDetail> GetOrderDetails()
+        {
+            var OrderDetails = new List<OrderDetail> 
+            { 
+                new OrderDetail{ OrderID = 1, ProductID = 1, Quantity = 3},
+                new OrderDetail { OrderID = 1, ProductID = 2, Quantity =1}
+            };
+            return OrderDetails;
         }
 
         public static List<Product> GetProducts()

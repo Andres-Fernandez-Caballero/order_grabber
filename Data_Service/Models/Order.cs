@@ -1,5 +1,6 @@
 ﻿using Data_Service.Database;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.Serialization;
 using System.ServiceModel;
@@ -39,32 +40,31 @@ namespace Data_Service.Models
         // Referencia al cliente
         [ForeignKey(nameof(CustomerID)),DataMember]
         public Customer Customer { get; set; }
-        //public virtual ICollection<OrderDetail> details { get; set; }
-        [OperationContract]
-       
-        public Customer GetCustomer()
-        {
-            return this.Customer;
-        }
+        [DataMember]
+        public ICollection<OrderDetail> Details { get; set; }
+        
     }
 
     public class OrderDetail
     {
+        // Clave Primaria
         [DataMember]
         public int OrderDetailID { get; set; }
+        
+        // Clave Foranea hacia la tabla Orders
+        [ForeignKey("Order"), DataMember]
+        public int? OrderID { get; set; }
         [DataMember]
-        public int order_id { get; set; }
-        [ForeignKey("order_id")]
+        public Order Order { get; set; }
+        
+        // Clave Foranea hacia la tabla Products
+        [ForeignKey("Product"), DataMember]
+        public int ProductID { get; set; }
         [DataMember]
-        public Order order { get; set; }
-        [DataMember]
-        public int quantity { get; set; }
-        [DataMember]
-        public int product_id { get; set; }
-        [ForeignKey("product_id")]
-        [DataMember]
-        public virtual Product product { get; set; }
+        public Product Product { get; set; }
 
-       
+        [DataMember]
+        public int Quantity { get; set; }
+
     }
 }

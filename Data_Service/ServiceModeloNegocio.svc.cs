@@ -1,4 +1,5 @@
 ﻿using Data_Service.Database;
+using System.Linq;
 using Data_Service.Interfaz;
 using Data_Service.Models;
 using System.Collections.Generic;
@@ -51,9 +52,37 @@ namespace Data_Service
         {
             using (var context = new ContextGrabber())
             {
-                context.Orders.Attach(order);
-                context.Orders.Remove(order);
+
+                var orderContext = context.Orders.Find(order.OrderID);
+
+                foreach (var detail in order.Details.ToList())
+                {
+                    var detailContext = context.OrderDetails.Find(detail.OrderDetailID);
+                    context.OrderDetails.Attach(detailContext);
+                    context.OrderDetails.Remove(detailContext);
+                    context.SaveChanges();
+                }
+
+                context.Orders.Attach(orderContext);
+                context.Orders.Remove(orderContext);
                 context.SaveChanges();
+
+
+                /*
+                var orders = context.Orders.ToList();
+                //context.Orders.Attach(order);
+                
+                // elimino uno por uno los detalles de la orden
+                foreach (var detail in order.Details)
+                {
+                    var detalle = context.OrderDetails.Find(detail.OrderDetailID);
+                    context.OrderDetails.Attach(detalle);
+                    context.OrderDetails.Remove(detalle);
+                    context.SaveChanges();
+                }
+                context.Entry(order).State = EntityState.Deleted;
+                context.SaveChanges();
+                */
             }
         }
 
@@ -140,7 +169,7 @@ namespace Data_Service
             using(var context = new ContextGrabber())
             {
 
-                var products = context.Products.Where(p => p.Estado == Estado.INACTIVO);
+                var products = context.Products.Where(p => p.Estado == Estado.ACTIVO);
                 return products.ToList();
             }
         }
@@ -158,6 +187,8 @@ namespace Data_Service
         {
             using (var context = new ContextGrabber())
             {
+                var products = context.Products.ToList();
+                var orderDetail = context.OrderDetails.ToList();
                 var customer = context.Customers.ToList();
                 var order = context.Orders.Find(id);
                 return order;

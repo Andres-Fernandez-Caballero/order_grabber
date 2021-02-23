@@ -14,7 +14,8 @@
     <div class="form-group">
         <label for="CustomerID" class="control-label col-md-2">Cliente</label>
             <div class="col-md-10">
-                <select class="form-control" name="customeriD">
+                <select class="form-control" name="customerID">
+                    <option value="">Seleccione un Cliente</option>
                     @foreach (var customer in ViewBag.CustomersList)
                      {
                         <option value="@customer.CustomerID">@customer.Customer_name</option>
@@ -23,19 +24,19 @@
             </div>
     </div>
     
-    
-    
     <div class="form-group">
-        <label for="Products" class="control-label col-md-2">Productos disponibles</label>
-        <div class="col-md-10">
-            <select class="form-control" name="product_list"> 
-                @foreach (var producto in ViewBag.ProductosDisponibles)
-                {
-                    <option value="@producto.ProductID">@producto.Product_name</option>
-                }
-
-            </select>
-        </div>
+        <p>Productos</p>
+        <ul>
+            @for (var index = 0; index < ViewBag.ProductosDisponibles.Length; index++)
+            {
+                <li>
+                    @Html.HiddenFor(x => Model.Details[index].ProductID, new { Value= ViewBag.ProductosDisponibles[index].ProductID })
+                    @ViewBag.ProductosDisponibles[index].Product_name
+                    @Html.DropDownListFor(m => Model.Details[index].Quantity,new SelectList( ViewBag.CantidadProductos))
+                    
+                </li>   
+            }
+        </ul>
     </div>
 
    

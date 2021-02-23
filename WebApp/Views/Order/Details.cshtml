@@ -27,6 +27,16 @@
         <dd>
             @Html.DisplayFor(model => model.Customer.Customer_name)
         </dd>
+        <dt>Detalle</dt>
+        <dd>
+            <ul>
+               @foreach (var item in Model.Details)
+               {
+                <li><p>Producto: <span>@item.Product.Product_name</span> Cantidad: <span>@item.Quantity</span></p></li>
+               }
+               
+            </ul>
+        </dd>
 
     </dl>
 </div>

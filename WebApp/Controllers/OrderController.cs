@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
 using WebApp.ServiceModeloNegocio;
 
 namespace WebApp.Controllers
@@ -34,7 +36,16 @@ namespace WebApp.Controllers
             using(var service = new ServiceModeloNegocio.ServiceClient())
             {
                 ViewBag.ProductosDisponibles = service.GetAllProductsDisponibles();
-                ViewBag.CustomersList = service.GetListCustomersByEstado(Estado.INACTIVO);
+                ViewBag.CustomersList = service.GetListCustomersByEstado(Estado.ACTIVO);
+
+                var cantidad = new List<ListItem>();
+
+                for(int count = 0; count <= 5; count++)
+                {
+                    cantidad.Add(new ListItem { Text = count.ToString(), Value = count.ToString() });
+                }
+                
+                ViewBag.CantidadProductos = cantidad;
                 return View();
             }
             
@@ -44,16 +55,19 @@ namespace WebApp.Controllers
         [HttpPost]
         public ActionResult Create(Order order)
         {
+
+            order.Details = order.Details.Where(o => o.Quantity != 0).ToArray();
             try
-            {
+            { 
+                
                 using(var service = new ServiceModeloNegocio.ServiceClient())
                 {
                     order.Order_date = DateTime.Now;
                     service.CreateOrder(order);
                     return RedirectToAction("Index");
                 }
-
                 
+               // return RedirectToAction("Index");
             }
             catch
             {

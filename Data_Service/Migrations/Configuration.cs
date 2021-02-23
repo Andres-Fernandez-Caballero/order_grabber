@@ -23,6 +23,10 @@ namespace Data_Service.Migrations
             var orders = InicializadorBaseDatos.GetOrders();
             orders.ForEach(order => context.Orders.Add(order));
             context.SaveChanges();
+
+            var orderDetails = InicializadorBaseDatos.GetOrderDetails();
+            orderDetails.ForEach(orderDetail => context.OrderDetails.Add(orderDetail));
+            context.SaveChanges();
         }
     }
 }

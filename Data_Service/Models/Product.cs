@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 
 namespace Data_Service.Models
@@ -32,5 +33,9 @@ namespace Data_Service.Models
         // Estado del producto en referencia a la disponibilidad
         [DataMember]
         public Estado Estado { get; set; }
+
+        //public ICollection<OrderDetail> OrderDetails { get; set; }
+
+        
     }
 }

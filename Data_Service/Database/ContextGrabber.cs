@@ -17,6 +17,7 @@ namespace Data_Service.Database
         public DbSet<Product> Products { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -31,6 +32,13 @@ namespace Data_Service.Database
     {
         public ProductMap()
         {
+            ToTable("Products");
+
+
+            HasKey(x => x.ProductID);
+            Property(x => x.ProductID).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+
+            //HasRequired(x => x.OrderDetails).WithMany(x => x.).HasForeignKey(x => x.CustomerID);
 
         }
     }
@@ -45,7 +53,21 @@ namespace Data_Service.Database
             Property(x => x.OrderID).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             
             HasRequired(x => x.Customer).WithMany(x => x.Orders).HasForeignKey(x => x.CustomerID);
+
             
+        }
+    }
+
+    public class OrderDetailMap: EntityTypeConfiguration<OrderDetail>
+    {
+        public OrderDetailMap()
+        {
+            ToTable("OrderDetails");
+
+            HasKey(x => x.OrderDetailID);
+            Property(x => x.OrderDetailID).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+
+            HasRequired(x => x.Order).WithMany(x => x.Details).HasForeignKey(x => x.OrderID);
         }
     }
 
