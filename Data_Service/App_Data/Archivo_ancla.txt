@@ -1,0 +1,3 @@
+﻿Soy un archivo ancla o_o
+Lo puse porque cuando clonaba el repositorio se borraba la carpeta App_Data y no cargaba las migraciones,
+se ya se era mejor tocar el gitignore pero tenia miedo de cagarla...
