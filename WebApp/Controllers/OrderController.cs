@@ -38,9 +38,13 @@ namespace WebApp.Controllers
                 ViewBag.ProductosDisponibles = service.GetAllProductsDisponibles();
                 ViewBag.CustomersList = service.GetListCustomersByEstado(Estado.ACTIVO);
 
+                /* 
+                 * Creo un ListItem solo con numeros para mostrar en un elemento ListBox en la plantilla de crear orden
+                 */ 
                 var cantidad = new List<ListItem>();
 
-                for(int count = 0; count <= 5; count++)
+                const int cantidad_maxima_productos = 5; // Es la cantidad maxima de productos que puede seleccionar un usuario 
+                for(int count = 0; count <= cantidad_maxima_productos; count++)
                 {
                     cantidad.Add(new ListItem { Text = count.ToString(), Value = count.ToString() });
                 }
@@ -48,7 +52,6 @@ namespace WebApp.Controllers
                 ViewBag.CantidadProductos = cantidad;
                 return View();
             }
-            
         }
 
         // POST: Order/Create
@@ -56,7 +59,7 @@ namespace WebApp.Controllers
         public ActionResult Create(Order order)
         {
 
-            order.Details = order.Details.Where(o => o.Quantity != 0).ToArray();
+            order.Details = order.Details.Where(o => o.Quantity != 0).ToArray(); // recorro el array y elimino los registros con quantiy = 0
             try
             { 
                 
