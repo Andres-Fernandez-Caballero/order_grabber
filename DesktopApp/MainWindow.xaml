@@ -1,0 +1,35 @@
+﻿<Window x:Class="DesktopApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DesktopApp"
+        mc:Ignorable="d"
+        
+        Icon="Resources/icono.ico"
+        Title="Order Grabber" Height="450" Width="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid Background="#B9F6CA" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition  Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <!-- Nombre de la aplicacion -->
+            <TextBlock Grid.Column="0" Text="Order Grabber" Foreground="FloralWhite" TextAlignment="Center" Margin="8" VerticalAlignment="Center" FontSize="24" />
+                <!-- Lista de paginas -->
+            <StackPanel Grid.Column="2" Orientation="Horizontal" Margin="0,0,32,0">
+                <Button  Content="Home" Width="60" Margin="8" Click="Button_Click_Home_page" Background="White"/>
+                <Button Content="Clientes"  Width="60" Margin="8" Click="Button_Click_Customers_page" Background="White"/>
+                <Button Content="Ordenes" Width="60" Margin="8" Click="Button_Click_Orders_page" Background="White"/>
+                <Button Content="Productos" Width="60" Margin="8" Click="Button_Click_Products_page" Background="White"/>
+            </StackPanel>
+        </Grid>
+            <Frame Grid.Row="1" x:Name="Main" Margin="0" NavigationUIVisibility="Hidden" />
+    </Grid>
+</Window>
