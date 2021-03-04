@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3aabf029-d391-4121-b9b9-8d7cb4ad0c74" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:58576/ServiceModeloNegocio.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServiceModeloNegocio.xsd" MetadataType="Schema" ID="058249a3-2519-423d-ad29-2b9150db560c" SourceId="1" SourceUrl="http://localhost:58576/ServiceModeloNegocio.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServiceModeloNegocio1.xsd" MetadataType="Schema" ID="c5b01ed7-7002-4e05-af66-5b8fdbe2a6c3" SourceId="1" SourceUrl="http://localhost:58576/ServiceModeloNegocio.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServiceModeloNegocio.wsdl" MetadataType="Wsdl" ID="74427076-c783-4241-bdda-6444d2e971af" SourceId="1" SourceUrl="http://localhost:58576/ServiceModeloNegocio.svc?wsdl" />
+    <MetadataFile FileName="ServiceModeloNegocio2.xsd" MetadataType="Schema" ID="5a23df6c-1f35-481d-95ae-5ebeeeda2912" SourceId="1" SourceUrl="http://localhost:58576/ServiceModeloNegocio.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServiceModeloNegocio.disco" MetadataType="Disco" ID="e0d95e3e-3928-4839-991c-2525f096c97f" SourceId="1" SourceUrl="http://localhost:58576/ServiceModeloNegocio.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
