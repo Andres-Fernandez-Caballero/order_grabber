@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<WebApp.ServiceModeloNegocio.Customer>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Agregar", "Create", null, new { @class = "btn btn-lg btn-default" })
 </p>
 <table class="table">
     <tr>
@@ -20,9 +20,9 @@
         <td>@Html.DisplayFor(modelItem => item.Estado)</td>
         <!-- opciones -->
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CustomerID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.CustomerID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CustomerID })
+            @Html.ActionLink("Editar", "Edit", new { id=item.CustomerID }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.CustomerID }) |
+            @Html.ActionLink("Borrar", "Delete", new { id=item.CustomerID })
         </td>
     </tr>
 }

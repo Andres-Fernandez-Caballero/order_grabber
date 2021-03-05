@@ -1,23 +1,26 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    <link type="image/x-icon" rel="icon" href="favicon.ico" />
+    <title lang="en">Order Grabber</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar bg-order-grabber navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
+                
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Nombre de la aplicación", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <img src="~/Resources/Logo.png" alt="la fachada de un comercio color celeste" class="navbar-brand" />
+                @Html.ActionLink("Order Grabber", "Index", "Home", new { area = "" }, new { @class = "navbar-brand text-alert" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -26,7 +29,6 @@
                     <li>@Html.ActionLink("Productos", "Index", "Product")</li>
                     <li>@Html.ActionLink("Ordenes", "Index", "Order")</li>
                     <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
                 </ul>
             </div>
         </div>
@@ -35,7 +37,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
+            <p lang="en">&copy; @DateTime.Now.Year - <strong>Order Grabber</strong> - Andres Pablo Fernandez caballero</p>
         </footer>
     </div>
 

@@ -1,7 +1,7 @@
 ﻿@model ICollection<WebApp.ServiceModeloNegocio.Order>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Agregar", "Create", null, new { @class = "btn btn-lg btn-default" })
 </p>
 <table class="table">
     <tr>
@@ -21,9 +21,9 @@
     
         <!--Opciones-->
     <td>
-        @Html.ActionLink("Edit", "Edit", new { id = order.OrderID }) |
-        @Html.ActionLink("Details", "Details", new { id = order.OrderID }) |
-        @Html.ActionLink("Delete", "Delete", new { id = order.OrderID })
+        @Html.ActionLink("Editar", "Edit", new { id = order.OrderID }) |
+        @Html.ActionLink("Detalles", "Details", new { id = order.OrderID }) |
+        @Html.ActionLink("Borrar", "Delete", new { id = order.OrderID })
     </td>
 </tr>
 }

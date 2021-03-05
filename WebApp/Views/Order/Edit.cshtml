@@ -5,38 +5,50 @@
 {
     @Html.AntiForgeryToken()
     
-    <div class="form-horizontal">
-        <h4>Order</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.CustomerID, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.CustomerID, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.CustomerID, "", new { @class = "text-danger" })
-            </div>
-        </div>
+<div class="form-horizontal">
+    <h4>Orden</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-        @Html.HiddenFor(model => model.OrderID)
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Order_date, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Order_date, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Order_date, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
+    <div class="form-group">
+        <label for="CustomerID" class="control-label col-md-2">Cliente</label>
+        <div class="col-md-10">
+            <select class="form-control" name="customerID">
+                <option value="">Seleccione un Cliente</option>
+                @foreach (var customer in ViewBag.CustomersList)
+                {
+                    <option value=@customer.CustomerID @(ViewBag.OrdenAeditar.Customer.CustomerID == customer.CustomerID? "selected='selected": "")>@customer.Customer_name</option>
+                }
+            </select>
         </div>
     </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Productos</label>
+        <div class="col-md-10">
+            <ul class="list-group">
+                @for (var index = 0; index < ViewBag.ProductosDisponibles.Length; index++)
+                {
+                    <li class="list-group-item">
+                        @Html.HiddenFor(x => Model.Details[index].ProductID, new { Value = ViewBag.ProductosDisponibles[index].ProductID })
+                        @ViewBag.ProductosDisponibles[index].Product_name
+                        @Html.DropDownListFor(m => Model.Details[index].Quantity, new SelectList(ViewBag.CantidadProductos))
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Guardar" class="btn btn-primary" />
+        </div>
+    </div>
+</div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Atras", "Index", null, new { @class = "btn btn-default" })
 </div>
 
 @section Scripts {

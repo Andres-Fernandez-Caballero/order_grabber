@@ -6,11 +6,10 @@
     @Html.AntiForgeryToken()
     
 <div class="form-horizontal">
-    <h4>Order</h4>
+    <h4>Orden</h4>
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-    
     <div class="form-group">
         <label for="CustomerID" class="control-label col-md-2">Cliente</label>
             <div class="col-md-10">
@@ -25,31 +24,31 @@
     </div>
     
     <div class="form-group">
-        <p>Productos</p>
-        <ul>
-            @for (var index = 0; index < ViewBag.ProductosDisponibles.Length; index++)
-            {
-                <li>
-                    @Html.HiddenFor(x => Model.Details[index].ProductID, new { Value= ViewBag.ProductosDisponibles[index].ProductID })
-                    @ViewBag.ProductosDisponibles[index].Product_name
-                    @Html.DropDownListFor(m => Model.Details[index].Quantity,new SelectList( ViewBag.CantidadProductos))
-                    
-                </li>   
-            }
-        </ul>
+        <label class="control-label col-md-2">Productos</label>
+        <div class="col-md-10">
+            <ul class="list-group">
+                @for (var index = 0; index < ViewBag.ProductosDisponibles.Length; index++)
+                {
+                    <li class="list-group-item">
+                        @Html.HiddenFor(x => Model.Details[index].ProductID, new { Value = ViewBag.ProductosDisponibles[index].ProductID })
+                        @ViewBag.ProductosDisponibles[index].Product_name
+                        @Html.DropDownListFor(m => Model.Details[index].Quantity, new SelectList(ViewBag.CantidadProductos))
+                    </li>
+                }
+            </ul>
+        </div>        
     </div>
 
-   
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Create" class="btn btn-default" />
+            <input type="submit" value="Agregar" class="btn btn-primary" />
         </div>
     </div>
 </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Atras", "Index", null, new { @class = "btn btn-default" })
 </div>
 
 @section Scripts {

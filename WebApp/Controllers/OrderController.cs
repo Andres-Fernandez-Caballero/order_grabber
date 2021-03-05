@@ -81,10 +81,27 @@ namespace WebApp.Controllers
         // GET: Order/Edit/5
         public ActionResult Edit(int id)
         {
+            //TODO: la plantilla de editar y crear son iguales podria refactorizarse...
             using (var service = new ServiceModeloNegocio.ServiceClient())
             {
                 ViewBag.ProductosDisponibles = service.GetAllProductsDisponibles();
-                ViewBag.CustomersList = service.GetListCustomersByEstado(Estado.INACTIVO);
+                ViewBag.CustomersList = service.GetListCustomersByEstado(Estado.ACTIVO);
+
+                /* 
+                 * Creo un ListItem solo con numeros para mostrar en un elemento ListBox en la plantilla de crear orden
+                 */
+                var cantidad = new List<ListItem>();
+
+                const int cantidad_maxima_productos = 5; // Es la cantidad maxima de productos que puede seleccionar un usuario 
+                for (int count = 0; count <= cantidad_maxima_productos; count++)
+                {
+                    cantidad.Add(new ListItem { Text = count.ToString(), Value = count.ToString() });
+                }
+
+                ViewBag.CantidadProductos = cantidad;
+
+                var order = service.GetOrderById(id);
+                ViewBag.OrdenAeditar = order;
                 return View();
             }
         }
@@ -93,6 +110,7 @@ namespace WebApp.Controllers
         [HttpPost]
         public ActionResult Edit(Order order)
         {
+            order.Details = order.Details.Where(o => o.Quantity != 0).ToArray(); // recorro el array y elimino los registros con quantiy = 0
             try
             {
                 using(var service = new ServiceModeloNegocio.ServiceClient())
